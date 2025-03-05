@@ -112,6 +112,7 @@ int shipde() {
 				if (dhocon1 ==2) {
 					printf("e[0;33m\n Doing pretty well, Capt. But I reckon that we could be making more money if you let me");
 					printf("1:\e[0;37m1\n The pirate flashes you a smile full of fangs. You had meet the Vargr before, back when he was a pirate lord. Seems he has not given up his habits");
+                                        printf("1:\e[0;37m1\n Do You want to play a card game?");
 					printf("1:\e[0;37m1 1:Check on your rifle\n2:Just checking on you\n3:Talk to you later");
 					scanf("%d", &dhocon1);
 				}
