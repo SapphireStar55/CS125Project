@@ -1,10 +1,3 @@
-/******************************************************************************
-* File: hw6_TeaganLee.c
-* Author: Teagan Lee
-* Purpose: Simulating a video game
-* Version: 1.0 Feb 10, 2024
-
-*******************************************************************************/
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -17,8 +10,10 @@ int ValceCharisma=2;
 int expcho1=0;
 int dice[2];
 int shipcombat ();
-/*******dice[0]=rand()6%+1;
-dice[1]=rand()6%+1; *****/
+ int boardpoints=0;
+ int eboardpoints=0;
+ int CrewSafety=0;
+ int dhocon2=0;
 
 int react2() {
 	int rec2;
@@ -155,11 +150,7 @@ int shipde() {
 
 	}
 }
-void clearScreen() {
-	printf("\e[2J\e[H");
-}
 int shipcombat() {
-
 	int enemyheal1=25;
 	dice[0]=rand()%6+1;
 	dice[1]=rand()%6+1;
@@ -167,63 +158,72 @@ int shipcombat() {
 	int shipdamage=0;
 	eshipdamage=dice[0]+dice[1]+Valcegaussskil;
 	shipdamage=dice[0]+dice[1];
-	{
-		int xx=0;
-		int xxx=0;
-		int yy=0;
-		char asc[100];
-		FILE *fp;
-		for (xxx=0; xxx<10; xxx++) {
-			fp=fopen("takeoff.txt", "r");
-			clearScreen();
-			sleep (.95);
-			for (xx=0; xx<14; xx++) {
-				fgets(asc, 100, fp);
-				for (yy=20-xxx; yy>0; yy--) {
-					printf(" ");
-				}
-				printf("%s", asc);
-			}
-			fclose(fp);
-		}
-		int start;
-		while (start !=3) {
-			FILE *fppp;
-			for (xxx=0; xxx<10; xxx++) {
-				fppp=fopen("title.txt", "r");
-				clearScreen();
-				sleep (1);
-				for (xx=0; xx<14; xx++) {
-					fgets(asc, 100, fp);
-					printf("%s", asc);
-				}
-				fclose(fp);
-			}
-			printf("\e[0;37m\n You rush to the turret, ready to fend off the threat");
+	printf("\e[0;37m\n You rush to the turret, ready to fend off the threat");
 
-			while((shiphealth>=0) && (enemyheal1>=0)) {
-				dice[0]=rand()%6+1;
-				dice[1]=rand()%6+1;
-				eshipdamage=dice[0]+dice[1]+Valcegaussskil;
-				shipdamage=dice[0]+dice[1];
-				enemyheal1=enemyheal1-shipdamage;
-				printf("\nEnemy health:%d", enemyheal1);
-				shiphealth=shiphealth-shipdamage;
-				printf("\nYour health:%d", shiphealth);
+	while((shiphealth>=0) && (enemyheal1>=0)) {
+		dice[0]=rand()%6+1;
+		dice[1]=rand()%6+1;
+		eshipdamage=dice[0]+dice[1]+Valcegaussskil;
+		shipdamage=dice[0]+dice[1];
+		enemyheal1=enemyheal1-shipdamage;
+		printf("\nEnemy health:%d", enemyheal1);
+		shiphealth=shiphealth-shipdamage;
+		printf("\nYour health:%d", shiphealth);
+   enemy
+       if (eshipdamage>12){
+       printf("\n You suck in a breath as the ship rolls over, and the turret is bathed in cold white light as the ship narrowly avoids the laser.");
+       printf("\n You grip the worn triggers as your foot slams down up the pedals to rotate the turret bay.\n 1 \n 2 \n 3 \n the Enemy ship fits itself in your reticule and you press down upon the button.");
+       printf("\n The enemy ship erupts into a cold blue flame that disappears as soon as it came. You think that you hit the enemy's main fuel supply. ");
+       }
+  
 
-				if (shiphealth <=0) {
-					printf("\nYour ship is destroyed. Game Over");
-				}
-				else if(enemyheal1<=0) {
-					printf("\nYou win");
-				}
-				sleep(1);
-			}
+    if (shiphealth <=0) {
+			printf("\nYour ship is destroyed. Game Over");
 		}
+   if ((enemyheal>0) && (enemyheal<5)){
+       printf("\n You think you board the enemy ship in it's current sorry state.");
+       boardpoints=1;
+       break;
+       }
+     if ((shiphealth>0) && (shiphealth<5)){
+       printf("\n Brian's voice blares overe the ship comms.\n");
+       printf(" \033[32m Incoming boarding party detected. Crew, neutralise them.");
+       eboardpoints=1;
+       break;
+       }
+  
+		else if(enemyheal1<=0) {
+			printf("\nYou win");
+		}
+		sleep(1);
 	}
 }
+int enemyboard(){
+int comchoice1=0,comchoice2=0;
+if (eboardpoints>=1){
+printf("\e[0;37m\n The lights of the ship turn red as you rush down the ladder back into the main part of the ship. You have limited time but so many decisions to make.");
+printf("\n 1: You decide to contact Brian \n 2: You decide to message Dhoerrgh \n 3:You call Engie \n 4; You contact Thorvald"); 
+scanf("%d", &comchoice1);
+if ( comchoice1=1){
+printf("\n Brian get to the docking port with your shield, I need you to block off the entrance.");
+printf("\033[32m \n Affirmative Captain. I will be there momentarily.");
+crewsafety=crewsafety+3;
+}
+if (comchoice1=2){
+printf("e[0;33m\n What do you need me to do Valce?");
+printf("\e[0;37m\n You're the former pirate, do you know what their tactics could be?");
+printf("e[0;33m\n To be frank Valce these pirates aren't acting like regular ones. No pirate worth a lick of salt would attack a spaceport, but obviously these fellas are worth that.");
+printf(" My best recommendation? Trap them in the airlock and watch them from the camera. Let's figure out their deal before we go in gun's blazing, and keep that gauss rifle on low. We don't want to ruin our own ship.");
+printf("\e[0;37m\n 1: Let's do that \n 2: Let's not risk it and take them now \n");
+scanf("%d", &dhocon2);
 
 
+
+
+
+void clearScreen() {
+	printf("\e[2J\e[H");
+}
 
 int shipexp1() {
 	printf("\033[32m Estimated travel time: two hours and 15 minutes. I suggest you rest captain.");
@@ -249,32 +249,47 @@ int shipexp1() {
 				printf("\033[32m \n All systems are nominal. Any other question Captain?\n");
 				printf("\e[0;37m 1:Have you found what you are looking for? \n 2: What's your skills again?\n 3: Can you unlock the medbat? ");
 				scanf("%d", &Briantalk2);
+        }
 				if (Briantalk2 == 1) {
 					printf("\033[32m \n Negative Captain. My objective remains as continue\n");
 					printf("\e[0;37m1: Why do you assume that learning about your origin is what continue means? \n 2: You serious? Did you risk us and a solar system for that? That could have meant anything!");
 					scanf("%d", &Briantalk3);
+                      }
 				}
-			}
+		
 
-		}
+		
 		if (expcho1 ==3) {
-			printf("\e[0;37m \nYou lie your head on the pillow and before you hear it you hear BRIAN over the intercom");
-		}
+		
 
-	}
-
+				int xx=0;
+				int xxx=0;
+				int yy=0;
+				char asc[100];
+				FILE *fp;
+				for (xxx=0; xxx<10; xxx++) {
+					fp=fopen("takeoff.txt", "r");
+					clearScreen();
+					sleep (.95);
+					for (xx=0; xx<14; xx++) {
+						fgets(asc, 100, fp);
+						for (yy=20-xxx; yy>0; yy--) {
+							printf(" ");
+						}
+						printf("%s", asc);
+					}
+					fclose(fp);
+				}
+				printf("\e[0;37m \nYou lie your head on the pillow and before you hear it you hear BRIAN over the intercom");
+			}
 }
-
-int main() {
-
-
-	int z=0;
+}
+	
+	int main() {
+		int z=0;
 	int zz=0;
-
 	char as[100];
-
 	int start;
-	while (start !=3) {
 		FILE *fppp;
 		for (zz=0; zz<10; zz++) {
 			fppp=fopen("title.txt", "r");
@@ -285,38 +300,42 @@ int main() {
 				printf("%s", as);
 			}
 			fclose(fppp);
-
 		}
+
+		while (start !=3) {
+			printf("\e[0;37m\nWelcome To Traveller  \n 2:Settings \n 3:Quit\n");
+			
+			scanf("%d", &start);
+			if (start == 1) {
+				intro();
+				shipexp1();
+				shipcombat();
+			}
+			else if (start ==2) {
+				printf("\e[1;31mWhat difficulty level?\n 1: Easy\n 2: Standard \n 3: Difficult\n");
+				scanf("%d",&difficulty);
+				if (difficulty ==1) {
+					shiphealth=200;
+					Fuel=100;
+				}
+				else if (difficulty ==2) {
+					shiphealth=100;
+					Fuel=50;
+
+				}
+				else if (difficulty ==3) {
+					shiphealth=50;
+					Fuel=25;
+				}
+			}
+		}
+		return 0;
 	}
 
-	printf("\e[0;37m\nWelcome To the Space Adventure Game!\n 1:New Game \n 2:Settings \n 3:Quit\n");
 
-	scanf("%d", &start);
-	if (start == 1) {
-		intro();
-		shipexp1();
-		shipcombat();
-	}
-	else if (start ==2) {
-		printf("\e[1;31mWhat difficulty level?\n 1: Easy\n 2: Standard \n 3: Difficult\n");
-		scanf("%d",&difficulty);
-		if (difficulty ==1) {
-			shiphealth=200;
-			Fuel=100;
-		}
-		else if (difficulty ==2) {
-			shiphealth=100;
-			Fuel=50;
 
-		}
-		else if (difficulty ==3) {
-			shiphealth=50;
-			Fuel=25;
-		}
-	}
 
-	return 0;
-}
+
 
 
 
