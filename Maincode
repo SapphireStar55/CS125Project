@@ -22,6 +22,18 @@ int shipcombat ();
 /*******dice[0]=rand()6%+1;
 dice[1]=rand()6%+1; *****/
 
+Inventory cargoHold;
+	cargoHold.gold.oreType="Gold";
+	cargoHold.gold.quantity=0;
+	cargoHold.gold.units="kg";
+
+	cargohold.platinum.oreType="Platinum";
+	cargohold.platinum.quantity=0;
+	cargohold.platinum.units="kg";
+
+	cargohold.tritium.oreType="Tritium";
+	cargohold.tritium.quantity=0;
+	cargohold.tritium.units="kg";
 
 int react2() {
 	int rec2;
