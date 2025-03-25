@@ -6,7 +6,7 @@ struct ore{
 typedef struct ore Ore;
 
 typedef struct inventory{
-    ore gold;
-    ore platinum;
-    ore tritium;
+    Ore gold;
+    Ore platinum;
+    Ore tritium;
 } Inventory;
