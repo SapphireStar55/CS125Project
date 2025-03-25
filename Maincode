@@ -10,17 +10,18 @@
 #include <unistd.h>
 #include "inventory.h"
 
-int difficulty=2;
-int shiphealth=100;
-int Fuel=50;
-int Valcegaussskil=5;
-int gaussammo=50;
-int ValceCharisma=2;
-int expcho1=0;
+int location = 1;
+int difficulty = 2;
+int shiphealth = 100;
+int Fuel = 50;
+int Valcegaussskil = 5;
+int gaussammo = 50;
+int ValceCharisma = 2;
+int expcho1 = 0;
 int dice[2];
 int shipcombat ();
-/*******dice[0]=rand()6%+1;
-dice[1]=rand()6%+1; *****/
+/*******dice[0] = rand() % 6 + 1;
+dice[1]=rand() % 6 + 1; *****/
 
 Inventory cargoHold;
 	cargoHold.gold.oreType="Gold";
