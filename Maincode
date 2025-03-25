@@ -10,6 +10,7 @@
 #include <unistd.h>
 #include "inventory.h"
 
+//initialize variables
 int location = 1;
 int difficulty = 2;
 int shiphealth = 100;
@@ -23,6 +24,7 @@ int shipcombat ();
 /*******dice[0] = rand() % 6 + 1;
 dice[1]=rand() % 6 + 1; *****/
 
+//initialize cargohold
 Inventory cargoHold;
 	cargoHold.gold.oreType="Gold";
 	cargoHold.gold.quantity=0;
@@ -245,7 +247,7 @@ int shipexp1() {
 	printf("\033[32m Estimated travel time: two hours and 15 minutes. I suggest you rest captain.");
 	printf("\e[0;37m\n The room is bathed in a green glow as holographics spring to life around, the robot idily typing on them as it walks away.");
 	printf("\e[0;37mFaintly you feel the hum of the engine below you as the ship prepares to take off.");
-	printf("\e[0;37mWhat will you do?\n 1:Explore the Old Guard.\n 2: Talk to BRIAN\n 3: Get some rest\n");
+	printf("\e[0;37mWhat will you do?\n 1:Explore the Old Guard.\n 3: Talk to BRIAN\n 4: Get some rest\n");
 	scanf("%d", &expcho1);
 	while (expcho1 !=3) {
 		if (expcho1 == 1) {
@@ -253,7 +255,9 @@ int shipexp1() {
 			printf("\e[0;37mWhat will you do?\n 1:Explore the Old Guard.\n 2: Talk to BRIAN\n 3: Get some rest\n");
 			scanf("%d", &expcho1);
 		}
-		if (expcho1 == 2) {
+		if (expcho1 == 2){
+			mine()
+		if (expcho1 == 3) {
 			int Briantalk1=0;
 			int Briantalk2=0;
 			int Briantalk3=0;
@@ -273,7 +277,7 @@ int shipexp1() {
 			}
 
 		}
-		if (expcho1 ==3) {
+		if (expcho1 ==4) {
 			printf("\e[0;37m \nYou lie your head on the pillow and before you hear it you hear BRIAN over the intercom");
 		}
 
