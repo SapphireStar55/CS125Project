@@ -18,10 +18,10 @@ int* mining(int location) {
 			    printf("You begin mining...\n");
 
 			    //gold yield
-			    haul[0]+=(rand()%25+16);
+			    haul[0] += (rand()%25+16);
 
 			    //platinum yield
-			    haul[1]+=(rand()%11);
+			    haul[1] += (rand()%11);
 
 			    printf("+%dgold\n+%dplatinum\n\n",haul[0],haul[1]);
 
@@ -32,7 +32,7 @@ int* mining(int location) {
 			    printf("You begin mining...\n");
 
 			    //tritium yield
-			    haul[2]+=(rand()%30+16);
+			    haul[2] += (rand()%30+16);
 
 			    printf("+%dtritium\n\n",haul[2]);
 
@@ -47,7 +47,7 @@ int* mining(int location) {
 				//continue?
 				printf("\nContinue mining?(y/n) ");
 					scanf(" %c",&mine);
-				while((mine!='y')&&(mine!='n')) {
+				while((mine!='y') && (mine!='n')) {
 					printf("\nContinue mining?(y/n) ");
 					scanf(" %c",&mine);
 				}
