@@ -27,13 +27,13 @@ Inventory cargoHold;
 	cargoHold.gold.quantity=0;
 	cargoHold.gold.units="kg";
 
-	cargohold.platinum.oreType="Platinum";
-	cargohold.platinum.quantity=0;
-	cargohold.platinum.units="kg";
+	cargoHold.platinum.oreType="Platinum";
+	cargoHold.platinum.quantity=0;
+	cargoHold.platinum.units="kg";
 
-	cargohold.tritium.oreType="Tritium";
-	cargohold.tritium.quantity=0;
-	cargohold.tritium.units="kg";
+	cargoHold.tritium.oreType="Tritium";
+	cargoHold.tritium.quantity=0;
+	cargoHold.tritium.units="kg";
 
 int react2() {
 	int rec2;
