@@ -252,11 +252,11 @@ int shipexp1() {
 	while (expcho1 !=3) {
 		if (expcho1 == 1) {
 			shipde();
-			printf("\e[0;37mWhat will you do?\n 1:Explore the Old Guard.\n 2: Talk to BRIAN\n 3: Get some rest\n");
+			printf("\e[0;37mWhat will you do?\n 1:Explore the Old Guard.\n 2: Mine for resources\n 3: Talk to BRIAN\n 4: Get some rest\n");
 			scanf("%d", &expcho1);
 		}
 		if (expcho1 == 2){
-			mine()
+			int* haul[3]=mining(location);
 		if (expcho1 == 3) {
 			int Briantalk1=0;
 			int Briantalk2=0;
