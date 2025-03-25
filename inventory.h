@@ -1,5 +1,5 @@
 struct ore{
-  char ore_type[20];
+  char oreType[20];
   int quantity;
   char units[20];
 };
