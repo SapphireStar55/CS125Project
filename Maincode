@@ -255,9 +255,13 @@ int shipexp1() {
 			printf("\e[0;37mWhat will you do?\n 1:Explore the Old Guard.\n 2: Mine for resources\n 3: Talk to BRIAN\n 4: Get some rest\n");
 			scanf("%d", &expcho1);
 		}
-		if (expcho1 == 2){
+		else if (expcho1 == 2){
 			int* haul[3]=mining(location);
-		if (expcho1 == 3) {
+			cargoHold.gold.quantity += haul[0];
+			cargoHold.platinum.quantity += haul[1];
+			cargoHold.tritium.quantity += haul[2];
+
+		else if (expcho1 == 3) {
 			int Briantalk1=0;
 			int Briantalk2=0;
 			int Briantalk3=0;
@@ -277,7 +281,7 @@ int shipexp1() {
 			}
 
 		}
-		if (expcho1 ==4) {
+		else if (expcho1 ==4) {
 			printf("\e[0;37m \nYou lie your head on the pillow and before you hear it you hear BRIAN over the intercom");
 		}
 
