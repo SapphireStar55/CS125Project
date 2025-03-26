@@ -24,20 +24,6 @@ int shipcombat ();
 /*******dice[0] = rand() % 6 + 1;
 dice[1]=rand() % 6 + 1; *****/
 
-//initialize cargohold
-Inventory cargoHold;
-	cargoHold.gold.oreType="Gold";
-	cargoHold.gold.quantity=0;
-	cargoHold.gold.units="kg";
-
-	cargoHold.platinum.oreType="Platinum";
-	cargoHold.platinum.quantity=0;
-	cargoHold.platinum.units="kg";
-
-	cargoHold.tritium.oreType="Tritium";
-	cargoHold.tritium.quantity=0;
-	cargoHold.tritium.units="kg";
-
 int react2() {
 	int rec2;
 	printf("\e[0;37m1: Of course BRIAN, I am captain for my foresight after all\n2: No I was making sure you were doing your job\n");
@@ -290,6 +276,20 @@ int shipexp1() {
 }
 
 int main() {
+
+	//initialize cargohold
+	Inventory cargoHold;
+		cargoHold.gold.oreType="Gold";
+		cargoHold.gold.quantity=0;
+		cargoHold.gold.units="kg";
+	
+		cargoHold.platinum.oreType="Platinum";
+		cargoHold.platinum.quantity=0;
+		cargoHold.platinum.units="kg";
+	
+		cargoHold.tritium.oreType="Tritium";
+		cargoHold.tritium.quantity=0;
+		cargoHold.tritium.units="kg";
 
 
 	int z=0;
