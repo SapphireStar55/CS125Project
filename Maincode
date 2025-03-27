@@ -381,28 +381,23 @@ int shipexp1() {
 	int location = 1;
 
 	//initialize cargohold
-	Inventory cargoHold;
+	Inventory* cargoHold;
+	cargoHold = malloc(sizeof(Inventory));
 
 	//initialize gold branches
-	cargoHold.gold.oreType = "Gold";
-	cargoHold.gold.quantity = 0;
-	cargoHold.gold.units = "kg";
+	strcpy((*cargoHold).gold.oreType,"Gold");
+	(*cargoHold).gold.quantity = 0;
+	strcpy((*cargoHold).gold.units,"kg");
 
 	//initialize platinum branches
-	cargoHold.platinum.oreType = "Platinum";
-	cargoHold.platinum.quantity = 0;
-	cargoHold.platinum.units = "kg";
+	strcpy((*cargoHold).platinum.oreType,"Platinum");
+	(*cargoHold).platinum.quantity = 0;
+	strcpy((*cargoHold).platinum.units,"kg");
 
 	//initialize tritium branches
-	cargoHold.tritium.oreType = "Tritium";
-	cargoHold.tritium.quantity = 0;
-	cargoHold.tritium.units = "kg";
-
-	//create pointers to cargoHold quantities
-	int *goldPointer,*platinumPointer,*tritiumPointer;
-	goldPointer = &cargoHold.gold.quantity;
-	platinumPointer = &cargoHold.platinum.quantity;
-	tritiumPointer = &cargoHold.tritium.quantity;
+	strcpy((*cargoHold).tritium.oreType,"Tritium");
+	(*cargoHold).tritium.quantity = 0;
+	strcpy((*cargoHold).tritium.oreType,"Tritium");
 
 	//exposition
 	printf("\033[32m Estimated travel time: two hours and 15 minutes. I suggest you rest captain.");
@@ -450,9 +445,8 @@ int shipexp1() {
 		}
 
 		else if (expcho1 == 3) {
-
 			//call mining function. Pass location and pointer to cargoHold.
-			int* haul[3]=mining(location,goldPointer,platinumPointer,tritiumPointer);
+			mining(location,cargoHold);
 		}
 	}
 
