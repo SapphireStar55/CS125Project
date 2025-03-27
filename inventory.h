@@ -1,9 +1,9 @@
-/*
+/**************************************************************************
 File Name: inventory.h
 Author: Wesley Catlett
 Purpose: Contains the structure and type definitions for Ore and Inventory.
 Version History: Last updated on 03/27/25
-*/
+**************************************************************************/
 
 //Ore definition
 typedef struct ore{
