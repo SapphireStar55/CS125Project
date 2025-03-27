@@ -36,14 +36,14 @@ int react2() {
 }
 int intro() {
 	int react;
-	printf("\e[1;34m You are standing at the bridge of your ship, The Old Guard, ");
+	printf("\n\e[1;34m You are standing at the bridge of your ship, The Old Guard, ");
 	printf("\e[1;34m looking over the montly costs. Mortage is due soon and you have");
 	printf("\e[1;34m scant to pay it. As you ponder your condrum the pilot walks up.");
 	printf("\e[1;34m The lean robot hands you a dataslate with one it's four hands.");
 	printf("\e[1;34m It's main optic is fixed upon you as you read the report.");
 	printf("\e[1;34m In the lengthy prose of typical corpo talk, it details");
 	printf("a attack on a nearby Bridge Construction Company Shipyard ");
-	printf("\e[1;34m and the price for catching the pirates responible");
+	printf("\e[1;34m and the price for catching the pirates responible\n");
 	printf("\e[0;37m\n1: What's the state of the ship BRIAN?");
 	printf("\n2:When did we get this report?\n3:Any information on the bandits?");
 	printf("\n4: Look's like it's pay day\n");
