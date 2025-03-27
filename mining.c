@@ -1,9 +1,11 @@
-/********************************************************************************************
+/*****************************************************************************************************
 File Name: mining.c
 Author: Wesley Catlett
 Purpose: contains function "mining.c", which is the process by which the player obtains ores.
+	Input Parameters: location value as well as pointers to ore quantities in the cargo hold.
+	Returns: None. Updates ore quanitities directly to the cargo hold structure in the shipexpo1 function.
 Version History: updated 03/27/25
-********************************************************************************************/
+******************************************************************************************************/
 
 #include <stdio.h>
 #include <stdlib.h>
