@@ -13,14 +13,14 @@ Version History: updated 03/27/25
 #include "inventory.h"
 
 //begin function definition
-void mining(int location, int* goldPointer, int* platinumPointer, int* tritiumPointer) {
+void mining(int location, Inventory* cargoHold) {
 
 	//reset haul
 	int haul[3]= {0,0,0};
 
 	//initialize user choice
 	char mine = 'y';
-
+	
 	//mine until user elects not to continue
 	while(mine == 'y') {
 		switch (location){
@@ -81,9 +81,9 @@ void mining(int location, int* goldPointer, int* platinumPointer, int* tritiumPo
 	}
 
 	//add haul to cargoHold
-	*goldPointer += haul[0];
-	*platinumPointer += haul[1];
-	*tritiumPointer += haul[2];
+	(*cargoHold).gold.quantity += haul[0];
+	(*cargoHold).platinum.quantity += haul[1];
+	(*cargoHold).tritium.quantity += haul[2];
 
 	//haul summary
 	switch(location){
