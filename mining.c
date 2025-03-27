@@ -10,11 +10,9 @@ Version History: updated 03/25/25
 #include <time.h>
 #include "inventory.h"
 
-int haul[3]= {0,0,0};
+void mining(int location,Inventory* cargoHoldPointer) {
 
-int* mining(int location) {
-
-	
+	int haul[3]= {0,0,0};
 	char mine = 'y';
 
 	while(mine == 'y') {
@@ -61,5 +59,7 @@ int* mining(int location) {
 
 	}
 
-	return haul;
+	*cargoHoldPointer.gold.quantity += haul[0];
+	*cargoHoldPointer.platinum.quantity += haul[1];
+	*cargoHoldPointer.tritium.quantity += haul[2];
 }
