@@ -1,4 +1,4 @@
-y*/*****************************************************************************************************
+/*****************************************************************************************************
 File Name: mining.c
 Author: Wesley Catlett
 Purpose: contains function "mining.c", which is the process by which the player obtains ores.
