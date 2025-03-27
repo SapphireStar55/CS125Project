@@ -247,8 +247,12 @@ int shipexp1() {
 		cargoHold.tritium.quantity=0;
 		cargoHold.tritium.units="kg";
 
-	//create pointer to cargoHold
-	Inventory* cargoHoldPointer = &cargoHold;
+	//create pointers to cargoHold quantities
+	int *goldPointer,*platinumPointer,*tritiumPointer;
+	goldPointer = &cargoHold.gold.quantity;
+	platinumPointer = &cargoHold.platinum.quantity;
+	tritiumPointer = &cargoHold.tritium.quantity;
+	
 
 	printf("\033[32m Estimated travel time: two hours and 15 minutes. I suggest you rest captain.");
 	printf("\e[0;37m\n The room is bathed in a green glow as holographics spring to life around, the robot idily typing on them as it walks away.");
@@ -264,10 +268,7 @@ int shipexp1() {
 		else if (expcho1 == 2){
 
 			//call mining function. Pass location and pointer to cargoHold.
-			int* haul[3]=mining(location,cargoHoldPointer);
-			cargoHold.gold.quantity += haul[0];
-			cargoHold.platinum.quantity += haul[1];
-			cargoHold.tritium.quantity += haul[2];
+			int* haul[3]=mining(location,goldPointer,platinumPointer,tritiumPointer);
 
 		else if (expcho1 == 3) {
 			int Briantalk1=0;
