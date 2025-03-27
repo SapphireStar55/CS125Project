@@ -406,12 +406,14 @@ int shipexp1() {
 	printf("\e[0;37mFaintly you feel the hum of the engine below you as the");
 	printf("ship prepares to take off.");
 
-	//choice
-	printf("\e[0;37mWhat will you do?\n 1:Explore the Old Guard.");
-	printf("\n 2: Talk to BRIAN\n 3: Mine for resources\n");
-	printf("\n 4: Get some rest\n");
-	scanf("%d", &expcho1);
 	while (expcho1 !=4) {
+
+		//choice
+		printf("\e[0;37mWhat will you do?\n 1:Explore the Old Guard.");
+		printf("\n 2: Talk to BRIAN\n 3: Mine for resources\n");
+		printf("\n 4: Get some rest\n");
+		scanf("%d", &expcho1);
+
 		if (expcho1 == 1) {
 			shipde();
 			printf("\e[0;37mWhat will you do?\n 1:Explore the Old Guard.\n");
