@@ -12,39 +12,50 @@ Version History: updated 03/25/25
 
 void mining(int location, int* goldPointer, int* platinumPointer, int* tritiumPointer) {
 
+	//reset haul
 	int haul[3]= {0,0,0};
+
+	//initialize user choice
 	char mine = 'y';
 
+	//mine until user elects not to continue
 	while(mine == 'y') {
 		switch (location){
 
-	    //Bridge
+	    //mining at Bridge
 	    case 1:
+		    	    //begin mining notification
 			    printf("You begin mining...\n");
 
 			    //gold yield
 		    	    int goldLoad = (rand()%25+16);
 			    haul[0] += goldLoad;
-			    printf("+%dgold\n",goldLoad);
+
+		    	    //gold yield notification
+			    printf("+%dkg of gold\n",goldLoad);
 		    
 			    //platinum yield
 			    int platinumLoad = (rand()%11);
 			    haul[1] += platinumLoad;
 
 		    	    if(platinumLoad==0)
+				    //no platinum yield
 				    printf("\n");
 		    	    else
-				    printf("+%dplatinum\n\n",platinumLoad);
+				    //platinum yield notification
+				    printf("+%dkg of platinum\n\n",platinumLoad);
 			    break;
 
-	    //St. Giles
+	    //Mining at St. Giles
 	    case 2:
+		    	    //begin mining notification
 			    printf("You begin mining...\n");
 
 			    //tritium yield
 			    haul[2] += (rand()%30+16);
 
-			    printf("+%dtritium\n\n",haul[2]);
+		    	    //yield notification
+			    printf("+%dkg of tritium\n\n",haul[2]);
 
 			    break;
 
@@ -57,6 +68,8 @@ void mining(int location, int* goldPointer, int* platinumPointer, int* tritiumPo
 				//continue?
 				printf("\nContinue mining?(y/n) ");
 					scanf(" %c",&mine);
+		
+				//incorrect user input
 				while((mine!='y') && (mine!='n')) {
 					printf("\nContinue mining?(y/n) ");
 					scanf(" %c",&mine);
@@ -64,10 +77,12 @@ void mining(int location, int* goldPointer, int* platinumPointer, int* tritiumPo
 
 	}
 
+	//add haul to cargoHold
 	*goldPointer += haul[0];
 	*platinumPointer += haul[1];
 	*tritiumPointer += haul[2];
 
+	//haul summary
 	switch(location){
 		case 1:
 			if(haul[1]==0)
