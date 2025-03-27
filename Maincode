@@ -50,11 +50,11 @@ int intro() {
 	while (react !=4) {
 		scanf("%d", &react);
 		if (react == 1) {
-			printf("\033[32mCaptain,we have %d containers of fuel left.", Fuel);
-			printf("Scans indictate that hull has %d hardpoints. Anything else Captain?\n", shiphealth);
-			printf("\e[0;37m What's the state of the ship BRIAN?");
+			printf("\n\033[32mCaptain,we have %d containers of fuel left.", Fuel);
+			printf(" Scans indictate that hull has %d hardpoints. Anything else Captain?\n", shiphealth);
 			printf("\n2:When did we get this report?\n3:Any information on the bandits?");
-			printf("\n4: Look's like it's pay day\n");
+			printf("\n3:Any information on the bandits?")
+			printf("\n4:Look's like it's pay day\n");
 			scanf("%d", &react);
 
 		}
