@@ -11,7 +11,6 @@
 #include "inventory.h"
 
 //initialize variables
-int location = 1;
 int difficulty = 2;
 int shiphealth = 100;
 int Fuel = 50;
@@ -230,6 +229,27 @@ int shipcombat() {
 
 
 int shipexp1() {
+
+	//starting location
+	int location = 1;
+
+	//initialize cargohold
+	Inventory cargoHold;
+		cargoHold.gold.oreType="Gold";
+		cargoHold.gold.quantity=0;
+		cargoHold.gold.units="kg";
+	
+		cargoHold.platinum.oreType="Platinum";
+		cargoHold.platinum.quantity=0;
+		cargoHold.platinum.units="kg";
+	
+		cargoHold.tritium.oreType="Tritium";
+		cargoHold.tritium.quantity=0;
+		cargoHold.tritium.units="kg";
+
+	//create pointer to cargoHold
+	Inventory* cargoHoldPointer = &cargoHold;
+
 	printf("\033[32m Estimated travel time: two hours and 15 minutes. I suggest you rest captain.");
 	printf("\e[0;37m\n The room is bathed in a green glow as holographics spring to life around, the robot idily typing on them as it walks away.");
 	printf("\e[0;37mFaintly you feel the hum of the engine below you as the ship prepares to take off.");
@@ -242,7 +262,9 @@ int shipexp1() {
 			scanf("%d", &expcho1);
 		}
 		else if (expcho1 == 2){
-			int* haul[3]=mining(location);
+
+			//call mining function. Pass location and pointer to cargoHold.
+			int* haul[3]=mining(location,cargoHoldPointer);
 			cargoHold.gold.quantity += haul[0];
 			cargoHold.platinum.quantity += haul[1];
 			cargoHold.tritium.quantity += haul[2];
@@ -276,21 +298,6 @@ int shipexp1() {
 }
 
 int main() {
-
-	//initialize cargohold
-	Inventory cargoHold;
-		cargoHold.gold.oreType="Gold";
-		cargoHold.gold.quantity=0;
-		cargoHold.gold.units="kg";
-	
-		cargoHold.platinum.oreType="Platinum";
-		cargoHold.platinum.quantity=0;
-		cargoHold.platinum.units="kg";
-	
-		cargoHold.tritium.oreType="Tritium";
-		cargoHold.tritium.quantity=0;
-		cargoHold.tritium.units="kg";
-
 
 	int z=0;
 	int zz=0;
