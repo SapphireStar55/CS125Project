@@ -235,31 +235,38 @@ int shipexp1() {
 
 	//initialize cargohold
 	Inventory cargoHold;
-		cargoHold.gold.oreType="Gold";
-		cargoHold.gold.quantity=0;
-		cargoHold.gold.units="kg";
-	
-		cargoHold.platinum.oreType="Platinum";
-		cargoHold.platinum.quantity=0;
-		cargoHold.platinum.units="kg";
-	
-		cargoHold.tritium.oreType="Tritium";
-		cargoHold.tritium.quantity=0;
-		cargoHold.tritium.units="kg";
+
+	//initialize gold branches
+	cargoHold.gold.oreType = "Gold";
+	cargoHold.gold.quantity = 0;
+	cargoHold.gold.units = "kg";
+
+	//initialize platinum branches
+	cargoHold.platinum.oreType = "Platinum";
+	cargoHold.platinum.quantity = 0;
+	cargoHold.platinum.units = "kg";
+
+	//initialize tritium branches
+	cargoHold.tritium.oreType = "Tritium";
+	cargoHold.tritium.quantity = 0;
+	cargoHold.tritium.units = "kg";
 
 	//create pointers to cargoHold quantities
 	int *goldPointer,*platinumPointer,*tritiumPointer;
 	goldPointer = &cargoHold.gold.quantity;
 	platinumPointer = &cargoHold.platinum.quantity;
 	tritiumPointer = &cargoHold.tritium.quantity;
-	
 
+	//exposition
 	printf("\033[32m Estimated travel time: two hours and 15 minutes. I suggest you rest captain.");
 	printf("\e[0;37m\n The room is bathed in a green glow as holographics spring to life around, the robot idily typing on them as it walks away.");
 	printf("\e[0;37mFaintly you feel the hum of the engine below you as the ship prepares to take off.");
+
+	//exploration choice 1
 	printf("\e[0;37mWhat will you do?\n 1:Explore the Old Guard.\n 3: Talk to BRIAN\n 4: Get some rest\n");
 	scanf("%d", &expcho1);
-	while (expcho1 !=3) {
+	
+	while (expcho1 != 4) {
 		if (expcho1 == 1) {
 			shipde();
 			printf("\e[0;37mWhat will you do?\n 1:Explore the Old Guard.\n 2: Mine for resources\n 3: Talk to BRIAN\n 4: Get some rest\n");
@@ -291,7 +298,7 @@ int shipexp1() {
 
 		}
 		else if (expcho1 ==4) {
-			printf("\e[0;37m \nYou lie your head on the pillow and before you hear it you hear BRIAN over the intercom");
+			printf("\e[0;37m \nYou lie your head on the pillow and before you know it you hear BRIAN over the intercom");
 		}
 
 	}
