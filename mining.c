@@ -10,6 +10,7 @@ Version History: updated 03/27/25
 #include <time.h>
 #include "inventory.h"
 
+//begin function definition
 void mining(int location, int* goldPointer, int* platinumPointer, int* tritiumPointer) {
 
 	//reset haul
