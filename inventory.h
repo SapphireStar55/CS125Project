@@ -5,6 +5,8 @@ Purpose: Contains the structure and type definitions for Ore and Inventory.
 Version History: Last updated on 03/27/25
 **************************************************************************/
 
+#pragma once
+
 //Ore definition
 typedef struct ore{
   char oreType[20];
