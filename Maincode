@@ -486,6 +486,8 @@ int shipexp1() {
 		printf("\e[0;37m \nYou lie your head on the pillow and before you");
 		printf(" know it, you hear BRIAN over the intercom");
 
+	else 
+		printf("\033[0;31mInvalid selection.\033[0m\n");
 	}
 
 }
