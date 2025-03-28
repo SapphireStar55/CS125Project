@@ -74,7 +74,7 @@ void mining(int location, Inventory* cargoHold) {
 		
 				//incorrect user input
 				while((mine!='y') && (mine!='n')) {
-					printf("\nContinue mining?(y/n) ");
+					printf("\nContinue mining?\033[0;31m(y/n)\033[0m ");
 					scanf(" %c",&mine);
 				}
 
