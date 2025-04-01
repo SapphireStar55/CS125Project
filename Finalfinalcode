@@ -292,6 +292,7 @@ int shipcombat() {
 				enemyboard2();
 				int board();
 			}
+		
 		}
 
 		if ((enemyheal1>1) && (enemyheal1<7)) {
@@ -312,7 +313,7 @@ int shipcombat() {
 		else if(enemyheal1<=0) {
 			printf("\nYou win");
 		}
-		sleep(1);
+		sleep(2);
 	}
 }
 int enemyboard() {
@@ -407,7 +408,7 @@ int enemyboard2() {
 						printf(" at my side.");
 						diplocheck=dice[0]+dice[1]+ValceCharisma;
 						if (diplocheck>=10) {
-							printf("\e[0; 31m\n Not worth the risk then mate");
+							printf("\e[0; 31m\n Not worth the risk then mate ");
 							printf("Guess we can let you go");
 							break;
 						}
