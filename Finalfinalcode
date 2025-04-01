@@ -322,7 +322,6 @@ int enemyboard() {
 		printf("ladder back into the main part of the ship. You have limited time");
 		printf(" but so many decisions to make.");
 		printf("\n 1: You decide to contact Brian \n 2: You decide to message Dhoerrgh");
-		printf("\n 3:You call Engie \n 4; You contact Thorvald");
 		scanf("%d", &comchoice1);
 		if ( comchoice1=1) {
 			printf("\n Brian get to the docking port with your shield, I need you");
@@ -598,7 +597,7 @@ int shipexp1() {
 			if (Briantalk1 == 1) {
 				printf("\033[32m \n All systems are nominal. Any other question Captain?\n");
 				printf("\e[0;37m 1:Have you found what you are looking for?");
-				printf("\n 2: What's your skills again?\n 3: Can you unlock the medbat? ");
+				printf("\n 2: What's your skills again?\n 3: Can you unlock the medbay? ");
 				scanf("%d", &Briantalk2);
 			}
 			if (Briantalk2 == 1) {
