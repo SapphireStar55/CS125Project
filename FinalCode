@@ -357,7 +357,7 @@ int enemyboard2() {
 			while (comchoice3!=2) {
 				printf("\n 1.Attempt diplomacy\n 2.Start combat");
 				scanf("%d", &comchoice3);
-				if (comchoice1=1) {
+				if (comchoice3=1) {
 					printf("\n What are you fine fellows doing on my ship?");
 					printf("\e[0;31m\n What do you think we are doing. Spreading the word of Cyperon?");
 					printf("Get on your knees and throw down your weapons");
@@ -424,10 +424,14 @@ int enemyboard2() {
 					combat();
 
 				}
+                        
 			}
 
 		}
 	}
+if (comchoice1=2){
+printf("\n By the time you arrive at the airlock the pirates are already through and ready to attack.\n");
+combat();
 }
 int board() {
 	if (boardpoints>=1) {
