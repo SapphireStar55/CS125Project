@@ -557,22 +557,28 @@ int shipexp1() {
 	(*cargoHold).tritium.quantity = 0;
 	strcpy((*cargoHold).tritium.oreType,"Tritium");
 
+	//Exposition
 	printf("\033[32m Estimated travel time: two hours and 15 minutes. I suggest you rest captain.");
 	printf("\e[0;37m\n The room is bathed in a green glow as holographics spring");
 	printf("to life around, the robot idily typing on them as it walks away.");
 	printf("\e[0;37mFaintly you feel the hum of the engine below you as the");
 	printf("ship prepares to take off.");
+
+	//ship exploration loop
+	while (expcho1 !=4) {
+
+	//first ship exploration question
 	printf("\e[0;37mWhat will you do?\n 1:Explore the Old Guard.");
-	printf("\n 2: Talk to BRIAN\n 3: Get some rest\n");
+	printf("\n 2: Talk to BRIAN\n 3: Mine for resources.\n 4: Get some rest\n");
 	scanf("%d", &expcho1);
-	while (expcho1 !=3) {
+
 		if (expcho1 == 1) {
 			shipde();
 			printf("\e[0;37mWhat will you do?\n 1:Explore the Old Guard.\n");
 			printf("2: Talk to BRIAN\n 3: Get some rest\n");
 			scanf("%d", &expcho1);
 		}
-		if (expcho1 == 2) {
+		else if (expcho1 == 2) {
 			int Briantalk1=0;
 			int Briantalk2=0;
 			int Briantalk3=0;
@@ -596,11 +602,15 @@ int shipexp1() {
 				scanf("%d", &Briantalk3);
 			}
 		}
+		else if (expcho1 == 3) {
+			//call mining function. Pass location and pointer to cargoHold.
+			mining(location,cargoHold);
+		}
 	}
 
 
 
-	if (expcho1 == 3) {
+	if (expcho1 == 4) {
 
 
 		int xx=0;
